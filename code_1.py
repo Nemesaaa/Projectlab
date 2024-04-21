@@ -11,3 +11,4 @@ import tensorflow as tf
 import math
 #a=1;
 #print(a)
+#valami
