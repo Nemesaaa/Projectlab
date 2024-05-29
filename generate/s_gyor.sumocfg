@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+	<!--Szekció_1 : Bemeneti fájlok meghatározása -->
+
+    <input>
+        <net-file value="s_gyor.net.xml"/>  <!-- hálózat alapelemeit tartalmazó fájl -->
+        <additional-files value="s_gyor.flows.xml, s_gyor_stops.xml, s_gyor_buses.xml, s_gyor_outputs.xml, detector.xml, s_gyor.poly.xml"/> <!-- egyéb elemeket (járműtípusok, útvonalak, mérő és befolyásoló eszközök, grafikai elemek, stb.) tartalmazó fájl -->
+    </input> 
+	
+	<output>
+		<netstate-dump value="gyor_raw_data_dump.xml" /> <!-- rawDump mérési adatok generálásához -->
+	</output>
+	
+	<!-- Szekció_2 : Alapbeállítások -->
+	
+	<time>
+		<begin value = "0"/> <!-- Szimuláció kezdete [s] -->
+		<end value = "14400"/> <!-- szimuláció vége [s] -->
+	</time>
+	
+	<!-- Szekció_3 : Extrák - elmaradhatnak -->
+	
+    <processing>
+        <ignore-route-errors value="true"/> <!-- szimuláció akkor is lefut, ha valamely jármű fizikailag képtelen elérni célját, különben hibával leáll -->
+		<time-to-teleport value="300"/> <!-- jármű teleportálás 5 percenként, ha vmilyen okból képtelen haladni (hibás útvonal, gridlock, stb.)-->
+    </processing>
+
+    <routing>
+        <device.rerouting.adaptation-steps value="180"/> <!-- amennyiben egy jármű 180 másodpercnél tovább nem képes folytatni útját, útvonalát újratervezi -->
+		<device.rerouting.probability value="0.35"/> <!-- minden járműspawn 50% eséllye l értékeli felül a kiosztott útvonalát hálózat addigi állapota alapján-->
+		<device.rerouting.adaptation-interval value="60"/> <!-- ilyen időközönként rendel a program súlyokat az egyes útszakaszokhoz-->
+		<device.rerouting.period value="30"/> <!-- ilyen időközönként történhet újrakalkuláció-->
+	</routing>
+
+    <report> <!-- szimuláció futása közbeni hibák / események listázására -->
+        <verbose value="true"/>
+        <duration-log.statistics value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+    <gui_only>
+        <gui-settings-file value="s_gyor.view.xml"/> <!-- szimuláció grafikus felületen történő futtatása esetén alkalmazandó beállításokat tartalmazó fájl -->
+    </gui_only>
+	
+	<random>
+        <seed value="42"/> 
+    </random>
+
+
+</configuration>

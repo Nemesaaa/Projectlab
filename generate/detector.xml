@@ -1,0 +1,16 @@
+<additional>
+   
+	<inductionLoop id="1_D11" lane="31_N_i_0" pos="-10" freq="3600" file="detector_meas_out.xml"/>
+	
+	<inductionLoop id="1_D12" lane="31_N_o_0" pos="10" freq="3600" file="detector_meas_out.xml"/>
+
+	<inductionLoop id="1_D5" lane="31_W_i_3" pos="-20" freq="3600" file="detector_meas_out.xml"/>
+	<inductionLoop id="1_D6" lane="31_W_i_2" pos="-20" freq="3600" file="detector_meas_out.xml"/>
+	
+	<inductionLoop id="1_D1" lane="31_E_i_0" pos="-20" freq="3600" file="detector_meas_out.xml"/>
+	<inductionLoop id="1_D2" lane="31_E_i_1" pos="-20" freq="3600" file="detector_meas_out.xml"/>
+
+	<inductionLoop id="1_D9" lane="31_S_i_3" pos="-20" freq="3600" file="detector_meas_out.xml"/>
+	<inductionLoop id="1_D10" lane="31_S_i_2" pos="-20" freq="3600" file="detector_meas_out.xml"/>
+	
+</additional>

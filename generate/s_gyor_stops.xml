@@ -1,0 +1,25 @@
+<additionals>
+    <busStop id="81601_2" lane="25393749#2.7_0" startPos="2.99" endPos="10.81" name="81601_2" friendlyPos="0"/>
+    <busStop id="AV_1" lane="gneE208_0" startPos="19.05" endPos="28.33" name="AV_1" friendlyPos="0"/>
+    <busStop id="AV_3" lane="gneE209_0" startPos="27.65" endPos="37.01" name="AV_3" friendlyPos="0"/>
+    <busStop id="BG_1" lane="75_out_0" startPos="73.21" endPos="82.95" name="BG_1" friendlyPos="0"/>
+    <busStop id="FV_1" lane="gneE213_0" startPos="16.32" endPos="25.35" name="FV_1" friendlyPos="0"/>
+    <busStop id="FV_2" lane="-gneE165.306_0" startPos="13.09" endPos="22.24" name="FV_2" friendlyPos="0"/>
+    <busStop id="FV_3" lane="-102735130#2.376.11_0" startPos="25.41" endPos="34.64" name="FV_3" friendlyPos="0"/>
+    <busStop id="FV_4" lane="102735130#0.0.0_0" startPos="25.16" endPos="34.09" name="FV_4" friendlyPos="0"/>
+    <busStop id="FV_5" lane="gneE165.116_0" startPos="18.47" endPos="27.78" name="FV_5" friendlyPos="0"/>
+    <busStop id="GG_1" lane="gneE55_0" startPos="21.67" endPos="31.67" name="GG_1" friendlyPos="0"/>
+    <busStop id="RM_1" lane="RM_bus_ki_0" startPos="160.68" endPos="170.45" name="RM_1" friendlyPos="0"/>
+    <busStop id="RM_2" lane="RM_bus_ki_0" startPos="137.93" endPos="147.70" name="RM_2" friendlyPos="0"/>
+    <busStop id="RM_3" lane="RM_bus_ki_0" startPos="115.12" endPos="124.88" name="RM_3" friendlyPos="0"/>
+    <busStop id="RM_4" lane="RM_bus_be_0" startPos="15.21" endPos="23.08" name="RM_4" friendlyPos="0"/>
+    <busStop id="StI_1" lane="gneE204_0" startPos="26.19" endPos="36.45" name="StI_1" friendlyPos="0"/>
+    <busStop id="StI_2" lane="32_E_i_0" startPos="27.24" endPos="35.86" name="StI_2" friendlyPos="0"/>
+    <busStop id="StI_3" lane="gneE206_0" startPos="32.03" endPos="41.50" name="StI_3" friendlyPos="0"/>
+    <busStop id="StI_5" lane="gneE207_0" startPos="9.13" endPos="18.85" name="StI_5" friendlyPos="0"/>
+    <busStop id="TA_2" lane="102735081#2_0" startPos="24.48" endPos="34.22" name="TA_2" friendlyPos="0"/>
+    <busStop id="TA_4" lane="85_in_0" startPos="29.58" endPos="39.27" name="TA_4" friendlyPos="0"/>
+    <busStop id="VH_1" lane="157992303#2_0" startPos="0.68" endPos="9.52" name="VH_1" friendlyPos="0"/>
+    <busStop id="ZM_1" lane="gneE210_0" startPos="16.48" endPos="25.45" name="ZM_1" friendlyPos="0"/>
+    <busStop id="ZM_2" lane="gneE212_0" startPos="13.45" endPos="22.99" name="ZM_2" friendlyPos="0"/>
+</additionals>
