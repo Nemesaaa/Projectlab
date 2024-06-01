@@ -1,3 +1,7 @@
+import time
+
+start_time = time.time()
+
 import sumolib
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -118,4 +122,15 @@ kezd = 1800
 for i in range(14):
     timesteps.append(str(kezd+i*900)+".00")
 
+ 
 
+data=[]
+for i in f:
+    for j in timesteps:
+        G2 = add_edge_features_from_xml(G1,i,j)
+        print(i)
+        print(j)
+        data.append(nx_to_pyg(G2))
+torch.save(data,'data.pth')
+print(data)
+print("--- %s seconds ---" % (time.time() - start_time))

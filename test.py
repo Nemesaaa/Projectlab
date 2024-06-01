@@ -1,3 +1,4 @@
+'''
 import xml.etree.ElementTree as ET
 
 # Load the XML data from a file
@@ -22,3 +23,8 @@ for interval in intervals:
         print("Left Value:", left_value)
 
     break
+'''
+import torch
+
+data = torch.load('data.pth')
+print(data)
