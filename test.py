@@ -27,4 +27,4 @@ for interval in intervals:
 import torch
 
 data = torch.load('data.pth')
-print(data)
+print(len(data))
