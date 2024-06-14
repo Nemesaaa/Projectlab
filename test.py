@@ -24,7 +24,15 @@ for interval in intervals:
 
     break
 '''
-import torch
+""" import torch
 
 data = torch.load('data.pth')
-print(data[0])
+print(data[0]) """
+
+import numpy as np
+a=2350.014
+print(a)
+b = float(a)
+c = int(b)
+print(type(c))
+print(int(np.linspace(11,202,10)))
