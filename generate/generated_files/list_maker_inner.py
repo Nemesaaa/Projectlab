@@ -7,6 +7,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import xml.etree.ElementTree as ET
 import random
+random.seed(300)
 
 import torch
 import torch_geometric
@@ -117,20 +118,71 @@ for i in f:
 f.remove("s_gyor.net.xml")
 print(f)
 
+f_12 = []
+f_1 = []
+f_11 = []
+f_14 = []
+
+for i in f:
+    if "_12_" in i:
+        f_12.append(i)
+
+    if "_11_" in i:
+        f_11.append(i)
+
+    if "_1_" in i:
+        f_1.append(i)  
+
+    if "_14_" in i:
+        f_14.append(i)   
+
+print(f_14)
+print(f_12)
+print(f_11)
+print(f_1)
+
+print(str(len(f_14)) +"  "+ str(len(f_1)) +"  "+str(len(f_12)) +"  "+str(len(f_11)) +"  "+ str(len(f)) +"  "+ str(len(f_1)+len(f_11)+len(f_12)+len(f_14)))
+
+
 timesteps=[]
 kezd = 1800
 for i in range(14):
     timesteps.append(str(kezd+i*900)+".00")
 
- 
+data_f_14 = []
+data_f_12 = []
+data_f_11 = []
+data_f_1 = []
 
-data=[]
-for i in f:
-    for j in timesteps:
-        G2 = add_edge_features_from_xml(G1,i,j)
-        print(i)
-        print(j)
-        data.append(nx_to_pyg(G2))
-torch.save(data,'data.pth')
-print(data)
+data_types = [data_f_14, data_f_12, data_f_11, data_f_1]
+data_sources = [f_14, f_12, f_11, f_1]
+
+data_test=[]
+data_train = []
+for k in range(4):
+    for i in data_sources[k]:
+        for j in timesteps:
+            G2 = add_edge_features_from_xml(G1,i,j)
+            #print(i)
+            #print(j)
+            data_types[k].append(nx_to_pyg(G2))
+        print("--- %s seconds ---" % (time.time() - start_time) + str(i))
+#torch.save(data,'data.pth')
+
+for i in range(4):
+    current_sample = random.sample(data_types[i], int(len(data_types[i])*0.7))
+
+    for k in current_sample:
+        data_train.append(k)
+        data_types[i].remove(k)
+
+    for j in data_types[i]:
+        data_test.append(j)
+
+print(str(len(data_train)) + "leght of train data")
+print(str(len(data_test)) + "lenght of test data")
+
+torch.save(data_test,'data_test.pth')
+torch.save(data_train,'data_train.pth')
+    
 print("--- %s seconds ---" % (time.time() - start_time))
