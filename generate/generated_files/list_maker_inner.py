@@ -23,8 +23,6 @@ from os import walk
 import os
 import xml.etree.cElementTree as et
 
-f = []
-
 #Function to read in the network we work with into a networkx object with the nodes and edges, no features yet
 def read_sumo_net(filename):
     net = sumolib.net.readNet(filename)
@@ -157,19 +155,23 @@ data_f_1 = []
 data_types = [data_f_14, data_f_12, data_f_11, data_f_1]
 data_sources = [f_14, f_12, f_11, f_1]
 
+
+data_predict = []
 data_test=[]
 data_train = []
 for k in range(4):
     for i in data_sources[k]:
+        curlist = []
         for j in timesteps:
             G2 = add_edge_features_from_xml(G1,i,j)
             #print(i)
             #print(j)
-            data_types[k].append(nx_to_pyg(G2))
+            curlist.append(nx_to_pyg(G2))
+        data_predict.append(curlist)
         print("--- %s seconds ---" % (time.time() - start_time) + str(i))
-#torch.save(data,'data.pth')
+torch.save(data_predict,'data_predict.pth')
 
-for i in range(4):
+""" for i in range(4):
     current_sample = random.sample(data_types[i], int(len(data_types[i])*0.7))
 
     for k in current_sample:
@@ -183,6 +185,6 @@ print(str(len(data_train)) + "leght of train data")
 print(str(len(data_test)) + "lenght of test data")
 
 torch.save(data_test,'data_test.pth')
-torch.save(data_train,'data_train.pth')
+torch.save(data_train,'data_train.pth') """
     
 print("--- %s seconds ---" % (time.time() - start_time))
