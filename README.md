@@ -1,4 +1,4 @@
-# Projectlab
+# Iterative GNN-based traffic flow prediction and sensor placement optimization
 
 Abstract
 Accurate urban road traffic flow prediction is crucial for intelligent transportation systems (ITS). This project presents a co-design approach to the Traffic Sensor Location Problem (TSLP) and traffic flow prediction using Graph Neural Networks (GNNs).
