@@ -17,4 +17,5 @@ Accurate urban road traffic flow prediction is crucial for intelligent transport
 • **`generate/`** – Contains the generated SUMO outputs used in the study.  
 • **`gnn_outputs/`** – Holds the results of the current-time estimation model, along with visualization scripts.  
 • **`model_modification/`** – Includes experiments with different hidden dimensions and comparative graphs.  
+• **`Zone_Based_Algorithm`** – Contains the core logic for the algorithm we developed.  
 
